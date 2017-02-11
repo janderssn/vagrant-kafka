@@ -1,0 +1,12 @@
+[Unit]
+Description=Apache Kafka
+Requires=zookeeper.service network.target
+After=zookeeper.service network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+ExecStop=
+
+[Install]
+WantedBy=multi-user.target
